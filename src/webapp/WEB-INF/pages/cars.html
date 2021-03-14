@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Car List</title>
+</head>
+<body>
+
+  <div th:each="car : ${cars}">
+    <h2>Output a list of cars:</h2>
+    <p th:text="${car.getModel()+' '+car.getSeries()+' '+car.getReleaseDate()}">pCar</p>
+  </div>
+
+  <div th:each="car : ${cars}">
+    <h2>Or we will display a list of links to cars:</h2>
+    <a th:href="@{/{id}(id = ${car.getId()})}" th:text="${car.getModel()}">aCar</a>
+  </div>
+
+</body>
+</html>
