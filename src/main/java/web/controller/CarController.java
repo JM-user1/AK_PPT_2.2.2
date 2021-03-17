@@ -22,6 +22,7 @@ public class CarController {
     if(cnt > 5){
       cnt = 5;
       model.addAttribute("cars",carService.listCar(cnt));
+      return "cars";
     }
     model.addAttribute("cars",carService.listCar(cnt));
     return "cars";
