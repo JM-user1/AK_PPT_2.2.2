@@ -21,8 +21,6 @@ public class CarController {
   public String cntCars(@RequestParam("count") int cnt, Model model){
     if(cnt > 5){
       cnt = 5;
-      model.addAttribute("cars",carService.listCar(cnt));
-      return "cars";
     }
     model.addAttribute("cars",carService.listCar(cnt));
     return "cars";
